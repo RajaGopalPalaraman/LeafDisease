@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Leaf</string>
+    <string name="capture">Capture</string>
+    <string name="capture_info_static_display">Tap to capture Image</string>
+    <string name="camera_lock_failed">Camera is not free</string>
+    <string name="app_log_file">leaf-log.log</string>
+    <string name="takePicture">Take Picture</string>
+    <string name="retake">Back</string>
+    <string name="analyze">Analyze</string>
+    <string name="PREVIEW_ERROR">Camera Preview Failed</string>
+    <string name="processing">Processing…</string>
+    <string name="finished">Finised!!</string>
+    <string name="open_storage">Open Storage</string>
+    <string name="image_loading_failed">Image Loading Failed!!!</string>
+</resources>
