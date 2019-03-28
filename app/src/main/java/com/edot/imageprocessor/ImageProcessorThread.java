@@ -64,6 +64,10 @@ public class ImageProcessorThread extends Thread {
     private void diseaseName(float brown, float yellow, float green)
     {
         float total = brown + yellow + green;
+        
+        float damaged = brown + yellow;
+        float damagePercentage = (damaged / total) * 100;
+        int roundedPercentage = (int) damagePercentage;
         float brownPercentage = (brown / total) * 100;
         float yellowPercentage = (yellow / total) * 100;
 
@@ -72,23 +76,23 @@ public class ImageProcessorThread extends Thread {
 
         if (yellow > brown)
         {
-            handler.obtainMessage(1, "Result: Aster Yellow").sendToTarget();
+            handler.obtainMessage(1, "Leaf damaged by "+roundedPercentage+"%\nResult: Aster Yellow").sendToTarget();
         }
         else if (brownPercentage <= 10)
         {
-            handler.obtainMessage(1, "Result: Crown gall").sendToTarget();
+            handler.obtainMessage(1, "Leaf damaged by "+roundedPercentage+"%\nResult: Crown gall").sendToTarget();
         }
         else if (brownPercentage <= 30)
         {
-            handler.obtainMessage(1, "Result: Fire Blight").sendToTarget();
+            handler.obtainMessage(1, "Leaf damaged by "+roundedPercentage+"%\nResult: Fire Blight").sendToTarget();
         }
         else if (brownPercentage <= 50)
         {
-            handler.obtainMessage(1, "Result: Verticillium Wilt").sendToTarget();
+            handler.obtainMessage(1, "Leaf damaged by "+roundedPercentage+"%\nResult: Verticillium Wilt").sendToTarget();
         }
         else
         {
-            handler.obtainMessage(1, "Result: Blister Rust").sendToTarget();
+            handler.obtainMessage(1, "Leaf damaged by "+roundedPercentage+"%\nResult: Blister Rust").sendToTarget();
         }
     }
 
